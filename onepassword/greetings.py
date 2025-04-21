@@ -7,10 +7,10 @@ secret_name = RegistrySecret(name="secret_name", keys=["SECRET_NAME"])
 
 
 @registry.register(
-    default_title="Say Hello",
+    default_title="1Password",
     display_group="Greetings",
-    description="This is a function that says hello",
-    namespace="integrations.greetings",
+    description="Integrate 1Password into your tracecat workflow",
+    namespace="integrations.onepassword",
 )
 def say_hello(name: Annotated[str, Field(description="The name to say hello to")]):
     return {"message": f"Hello, {name}!"}
@@ -20,7 +20,7 @@ def say_hello(name: Annotated[str, Field(description="The name to say hello to")
     default_title="Say Goodbye",
     display_group="Greetings",
     description="This is a function that says goodbye",
-    namespace="integrations.greetings",
+    namespace="integrations.onepassword",
 )
 def say_goodbye(name: Annotated[str, Field(description="The name to say goodbye to")]):
     return {"message": f"Goodbye, {name}!"}
@@ -30,7 +30,7 @@ def say_goodbye(name: Annotated[str, Field(description="The name to say goodbye 
     default_title="Say Goodbye Secretly",
     display_group="Greetings",
     description="This is a function that says goodbye",
-    namespace="integrations.greetings",
+    namespace="integrations.onepassword",
     secrets=[secret_name],
 )
 def say_goodbye_secretly(
